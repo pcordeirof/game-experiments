@@ -7,7 +7,7 @@ public class Spawner : MonoBehaviour
     public GameObject BallPrefab;
     public Transform SpawnTransform;
     public ForceAmount forceAmount;
-
+    public float fAmount;
     void Start()
     {
         SetForceAmount();
@@ -29,16 +29,16 @@ public class Spawner : MonoBehaviour
         switch (i)
         {
             case 1:
-                forceAmount.XandZAmount = new Vector2(1.25f, 0);
+                forceAmount.XandZAmount = new Vector2(fAmount, 0);
                 break;
             case 2:
-                forceAmount.XandZAmount = new Vector2(-1.25f, 0);
+                forceAmount.XandZAmount = new Vector2(-fAmount, 0);
                 break;
             case 3:
-                forceAmount.XandZAmount = new Vector2(0, 1.25f);
+                forceAmount.XandZAmount = new Vector2(0, fAmount);
                 break;
             case 4:
-                forceAmount.XandZAmount = new Vector2(0, -1.25f);
+                forceAmount.XandZAmount = new Vector2(0, -fAmount);
                 break;
         }
     }
