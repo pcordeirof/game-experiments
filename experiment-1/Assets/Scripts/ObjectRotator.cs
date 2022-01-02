@@ -5,6 +5,9 @@ using UnityEngine;
 public class ObjectRotator : MonoBehaviour
 {
     public Transform RotationObject;
+    public Renderer ObjectRenderer;
+    public Material DefautMaterial;
+    public Material SelectMaterial;
     private float _sensitivity;
     private Vector3 _mouseReference;
     private Vector3 _mouseOffset;
@@ -20,8 +23,9 @@ public class ObjectRotator : MonoBehaviour
     void Update()
     {
         
-            if (_isRotating)
+        if (_isRotating)
         {
+            ObjectRenderer.material = SelectMaterial;
             // offset
             _mouseOffset = (Input.mousePosition - _mouseReference);
 
@@ -59,7 +63,7 @@ public class ObjectRotator : MonoBehaviour
 
     void OnMouseUp()
     {
-
+        ObjectRenderer.material = DefautMaterial;
         // rotating flag
         _isRotating = false;
     }
