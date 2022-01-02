@@ -18,4 +18,12 @@ public class BallBehaviour : MonoBehaviour
         ForceAmountZ = forceAmount.XandZAmount.y;
         BallRigidbody.AddForce(new Vector3(ForceAmountX, ForceAmountUp, ForceAmountZ), ForceMode.Impulse);
     }
+
+    private void Update()
+    {
+        if(this.gameObject.transform.position.y <= -40)
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }
