@@ -22,7 +22,7 @@ public class PointsTrigger : MonoBehaviour
     {
         Light.color = new Color(31f, 180f, 245f);
         Light.intensity = 10f;
-        Light.range = 1.05f;
+        Light.range = .8f;
         yield return new WaitForSeconds(0.5f);
         Light.color = DefautColor;
         Light.intensity = 20f;
