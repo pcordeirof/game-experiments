@@ -8,18 +8,28 @@ public class Spawner : MonoBehaviour
     public Transform SpawnTransform;
     public ForceAmount forceAmount;
     public float fAmount;
+
+    public AudioSource audioSource;
+    public AudioClip ballSpawnSFX;
     void Start()
     {
         SetForceAmount();
-        StartCoroutine(Spawn());
+        StartCoroutine(PlayAudio());
         Debug.Log(SpawnTransform.position);
     }
 
+    public IEnumerator PlayAudio()
+    {
+        audioSource.PlayOneShot(ballSpawnSFX);
+        yield return new WaitForSeconds(.25f);
+        StartCoroutine(Spawn());
+    }
     public IEnumerator Spawn()
     {
+        
         Instantiate(BallPrefab,SpawnTransform.position, Quaternion.identity, SpawnTransform);
         yield return new WaitForSeconds(2f);
-        StartCoroutine(Spawn());
+        StartCoroutine(PlayAudio());
     }
 
     public void SetForceAmount()
