@@ -2,16 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BallMovement : MonoBehaviour
+public class BallFrontMovement : MonoBehaviour
 {
     public Rigidbody2D BallRigidbody;
     public Animator BallAnimator;
     public Transform BallTransform;
 
+    public bool isGrounded = true;
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded == true)
         {            
             BallAnimator.SetTrigger("Jump");
         }
@@ -40,8 +41,21 @@ public class BallMovement : MonoBehaviour
 
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Floor")
+        {
+            isGrounded = true;
+        }
+        else
+        {
+            isGrounded = false;
+        }
+    }
+
     public void Jump()
     {
         BallRigidbody.AddRelativeForce(new Vector2(0, 5f), ForceMode2D.Impulse);
+        isGrounded = false;
     }
 }
