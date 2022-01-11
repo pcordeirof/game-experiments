@@ -94,13 +94,19 @@ public class BallUpMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        TouchedObject = collision.gameObject;
-        BallAnimator.SetBool("Push", true);
+        if(collision.gameObject.tag == "Floor")
+        {
+            TouchedObject = collision.gameObject;
+            BallAnimator.SetBool("Push", true);
+        }
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
-        TouchedObject = collision.gameObject;
-        BallAnimator.SetBool("Push", true);
+        if (collision.gameObject.tag == "Floor")
+        {
+            TouchedObject = collision.gameObject;
+            BallAnimator.SetBool("Push", true);
+        }
     }
 
     /*private void OnCollisionExit2D(Collision2D collision)
