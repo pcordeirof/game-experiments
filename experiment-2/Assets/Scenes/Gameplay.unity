@@ -177,6 +177,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   perspectiveManager: {fileID: 487051605}
+  slider: {fileID: 412454746}
+  Time: 20
 --- !u!95 &412454745
 Animator:
   serializedVersion: 3
@@ -185,7 +187,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 412454742}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: c37faf3b04d6e604cb3c05f05edd80f5, type: 2}
   m_CullingMode: 0
@@ -292,7 +294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BlockPrefab: {fileID: 3385542215938741822, guid: 4dff55f3b6aefd54c9a9dfc9272a1796, type: 3}
-  NumberOfBlocks: 4
+  NumberOfBlocks: 3
   InitialBlock: {fileID: 1010466838}
   FinalBlock: {fileID: 2126360505}
   Blocks: []
