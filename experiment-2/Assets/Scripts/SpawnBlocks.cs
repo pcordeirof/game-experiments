@@ -18,6 +18,7 @@ public class SpawnBlocks : MonoBehaviour
 
     public GameObject BallUpObject;
 
+    public PerspectiveManager perspectiveManager;
     public void Start()
     {
         int ix = Random.Range(1, 10);
@@ -51,6 +52,8 @@ public class SpawnBlocks : MonoBehaviour
         }
 
         SpawnBallUp();
+
+        perspectiveManager.SetBlocks(Blocks);
     }
 
     public void SpawnBlock()
