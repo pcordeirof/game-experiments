@@ -178,7 +178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   perspectiveManager: {fileID: 487051605}
   slider: {fileID: 412454746}
-  Time: 20
+  Time: 60
 --- !u!95 &412454745
 Animator:
   serializedVersion: 3
@@ -1232,6 +1232,7 @@ MonoBehaviour:
   BallRigidbody: {fileID: 2024089825}
   BallAnimator: {fileID: 2024089822}
   BallTransform: {fileID: 2024089824}
+  jumpForce: 5
   isGrounded: 1
 --- !u!1 &2040840560
 GameObject:
@@ -1321,7 +1322,7 @@ GameObject:
   - component: {fileID: 2126360508}
   m_Layer: 0
   m_Name: Final
-  m_TagString: Untagged
+  m_TagString: Final
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
